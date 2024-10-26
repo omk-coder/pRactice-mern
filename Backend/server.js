@@ -13,8 +13,6 @@ const app = express();
 
 app.use(cors({
   origin: process.env.CLIENT_URL,   // Allow requests from your frontend only
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,// Allow only specific methods
   optionsSuccessStatus: 200,   // Ensure successful OPTIONS response for old browsers
 }));
 
