@@ -12,11 +12,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors({
-    origin: process.env.CLIENT_URL,
+app.options('*', cors({
+  origin: process.env.CLIENT_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
-    optionsSuccessStatus: 200
+  optionsSuccessStatus: 200
 }));
 
 app.use("/api/auth", AuthRoutes);
