@@ -10,13 +10,13 @@ dotenv.config();
 
 const app = express();
 
-app.options('*', cors({
-  origin: process.env.CLIENT_URL,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-  optionsSuccessStatus: 200
-}));
 
+app.use(cors({
+  origin: process.env.CLIENT_URL,   // Allow requests from your frontend only
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,// Allow only specific methods
+  optionsSuccessStatus: 200,   // Ensure successful OPTIONS response for old browsers
+}));
 
 app.use(express.json());
 
