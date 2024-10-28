@@ -10,10 +10,8 @@ dotenv.config();
 
 const app = express();
 
-
-
-
 app.use(express.json());
+
 app.use(cors({
   origin: [process.env.CLIENT_URL], 
   optionsSuccessStatus: 200,   // Ensure successful OPTIONS response for old browsers
@@ -38,7 +36,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-const Port = process.env.PORT ||4000;
+const Port = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.MONGODB_URL)
