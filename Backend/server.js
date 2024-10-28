@@ -11,15 +11,13 @@ dotenv.config();
 const app = express();
 
 
-app.use(cors({
-  origin: [process.env.CLIENT_URL], 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,// Allow requests from your frontend only
-  optionsSuccessStatus: 200,   // Ensure successful OPTIONS response for old browsers
-}));
+
 
 app.use(express.json());
-
+app.use(cors({
+  origin: [process.env.CLIENT_URL], 
+  optionsSuccessStatus: 200,   // Ensure successful OPTIONS response for old browsers
+}));
 
 app.use("/api/auth", AuthRoutes);
 
@@ -31,7 +29,7 @@ app.get("/", (req, res) => {
 
 //middleware and handling errors
 app.use((err, req, res, next) => {
-  const statusCode = err.statusCode || 500;
+  const statusCode = err.statusCode || 5000;
   const message = err.message || "Internal Server Error";
   return res.status(statusCode).json({
     success: false,
