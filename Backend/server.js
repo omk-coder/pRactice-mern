@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL, // Ensure frontend URL is listed here
+  origin: [process.env.CLIENT_URL], // Ensure frontend URL is listed here
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true, // Allows cookies to be sent
   optionsSuccessStatus: 200,
