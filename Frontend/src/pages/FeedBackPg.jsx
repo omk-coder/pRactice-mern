@@ -8,7 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 
 const FeedBackPg = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    email: currentUser?.email || "", // set initial email
+    text: "",
+  });
   const navigate = useNavigate();
   const serverUrl = import.meta.env.VITE_SERVER_URL;
   const [loading, setLoading] = useState(false);
