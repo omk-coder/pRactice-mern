@@ -1,8 +1,9 @@
 import Docs from "../models/Docs.js";
+import Feedback from "../models/Feedback.js";
+import { errorHandler } from "../utils/error.js";
 
 export const ReadDocs = async (req, res) => {
   try {
-    console.log(res);
     const userId = req.user._id;
     const { text } = req.body;
     if (!text) {
@@ -68,6 +69,27 @@ export const UpdateDocs = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
+
+export const FeedbackForm = async (req, res, next) => {
+  try {
+  
+    const userId = req.user._id;
+    const { email, text } = req.body;
+    if(!email){
+      res.status(400).send("Please provide your email address, better experience!");
+    }
+    if (!text) {
+      res.status(400).send("Please write your mini notes");
+    }
+
+    const FeedbackUserr = await Feedback.create({ text, createdBy: userId, email });
+    res.status(201).json(FeedbackUserr);
+  } catch (error) {
+    next(errorHandler(error))
+  }
+}
+
+
 
 //Authentication Middleware: The auth middleware is applied to each route to ensure that the user is authenticated.
 // User ID from Token: The user ID is extracted from the token (req.user._id) and used to create, show, delete, and update documents.
