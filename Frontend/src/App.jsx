@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import {Register,Landing, Signin, Home, CreateCard, } from './pages'
+import {Register,Landing, Signin, Home, CreateCard, FeedBackPg} from './pages'
 import SplashScreen from './Components/splashScreen'
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
         <Route path='/sign-up' element={<Register/>}/>
         <Route path='/sign-in' element={<Signin/>}/>
         <Route path='/create' element={<CreateCard/>}/>
+        <Route path='/feedback' element={<FeedBackPg/>}/>
       
         
 

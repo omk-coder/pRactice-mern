@@ -44,6 +44,12 @@ const Background = () => {
               >
                 Sign out
               </button>
+              <Link to="/feedback">
+                <button className="text-lg text-white bg-orange-300 rounded-md px-2 py-1 cursor-pointer">
+                  Feedback
+                </button>
+              </Link>
+
             </div>
           </div>
         ) : (
