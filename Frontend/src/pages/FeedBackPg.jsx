@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const FeedBackPg = () => {
  
-
+  const { currentUser } = useSelector((state) => state.User);
     const [formData, setFormData] = useState({
         email: currentUser?.email || "", // set initial email
         text: "",
