@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/c888f693-e66e-4288-a9f0-03fe68d62828
 ## Project Description
 
 This project is all about implementing features taking inspiration from Mac OS And designing an Effortless website that doesn't hinder your productive time and can create your own task accordingly. 
-This project is a MERN (MongoDB, Express, React, Node.js) stack application that provides [describe the main functionality]. The frontend is deployed on Vercel and the backend is also deployed on Vercel, ensuring seamless integration and deployment.
+This project is a MERN (MongoDB, Express, React, Node.js) stack application. The frontend is deployed on Vercel and the backend is also deployed on Vercel, ensuring seamless integration and deployment.
 
 ## Features
 
